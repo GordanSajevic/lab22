@@ -17,8 +17,15 @@ public class ZivotinjaTest {
 		IUS.dodajZivotinju("Necko", "pas", 4);
 		IUS.dodajZivotinju("Edib", "ptica", 2);
 		IUS.dodajZivotinju("Gordan", "konj", 4);
+		IUS.dodajZivotinju("Amra", "macka", 4);
+		IUS.dodajZivotinju("Sanela", "riba", 0);
+		IUS.dodajZivotinju("Davor", "pas", 4);
 		System.out.println(IUS.toString());
-		System.out.println("Ukunpno zivotinja: " + Zoo.brojac);
+		System.out.println("Ukupno zivotinja: " + Zoo.brojac);
+		int brojVrsta = IUS.izbrojVrste("pas");
+		System.out.println("U skladištu IUS imate " + brojVrsta + " psa.");
+		IUS.eliminisi("Haris");
+		System.out.println(IUS.toString());
 	
 	}
 }
