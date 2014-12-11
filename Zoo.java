@@ -1,20 +1,20 @@
 package lab22;
 
 public class Zoo {
-	private Zivotinja[] zivotinje;
+	private Zivotinje[] zivotinje;
 	private int brojZivotinja;
 	public static int brojac;
 	
 	public Zoo()
 	{
-		zivotinje = new Zivotinja[10];
+		zivotinje = new Zivotinje[10];
 		brojZivotinja = 0;
 	}
 	
 	public void dodajZivotinju(String ime, String vrsta, int brojNogu)
 	{
 		brojac++;
-		zivotinje[brojZivotinja] = new Zivotinja(ime, vrsta, brojNogu);
+		zivotinje[brojZivotinja] = new Zivotinje(ime, vrsta, brojNogu);
 		brojZivotinja++;
 		if(brojZivotinja == zivotinje.length)
 		{
@@ -24,7 +24,7 @@ public class Zoo {
 	
 	public void resizeZivotinje() {
 		int novaDuzina = 2 * zivotinje.length;
-		Zivotinja[] pomocna = new Zivotinja[novaDuzina];
+		Zivotinje[] pomocna = new Zivotinje[novaDuzina];
 		for (int i=0; i<zivotinje.length; i++)
 		{
 			pomocna[i] = zivotinje[i];
@@ -45,5 +45,31 @@ public class Zoo {
 			strZoo += zivotinje[i].toString() + "\n";
 		}
 		return strZoo;
+	}
+	
+	public int izbrojVrste(String vrsta)
+	{
+		int broj = 0;
+		for (int i=0; i<brojZivotinja; i++)
+		{
+			if (zivotinje[i].getVrsta().equals(vrsta))
+			{
+				broj++;
+			}
+		}
+		return broj;
+	}
+	
+	public void eliminisi(String ime)
+	{
+		Zivotinje[] pomocna = new Zivotinje[zivotinje.length-1];
+		for (int i=0; i<zivotinje.length; i++)
+		{
+			if (zivotinje[i].getIme() != ime);
+			{
+				pomocna[i] = zivotinje[i];
+			}
+		}
+		zivotinje = pomocna;
 	}
 }
