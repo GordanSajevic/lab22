@@ -22,11 +22,11 @@ public class Zivotinja {
 	 * @param brojNogu
 	 */
 	
-	public Zivotinja(String ime, String vrsta, int brojNogu) 
+	public Zivotinja(String ime1, String vrsta1, int brojNogu1) 
 	{
-		this.ime = ime;
-		this.vrsta = vrsta;
-		this.brojNogu = brojNogu;
+		ime = ime1;
+		vrsta = vrsta1;
+		brojNogu = brojNogu1;
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public class Zivotinja {
 	 * @param vrsta
 	 */
 	
-	public Zivotinja(String ime, String vrsta)
+	public Zivotinja(String ime1, String vrsta)
 	{
 		if (vrsta.equals("konj") || vrsta.equals("pas") || vrsta.equals("macka"))
 		{
